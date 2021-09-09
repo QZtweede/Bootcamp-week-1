@@ -12,6 +12,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 #mainPageCircle{
@@ -24,7 +25,7 @@ body{
     align-items: center;
     flex-direction: column;
     cursor: pointer;
-    transition: 1s;
+    position: absolute;
 }
 
 #mainPageCircle h1{
@@ -37,4 +38,20 @@ body{
     font-family: 'Nova Square', cursive;
     font-size: 3vh;
     pointer-events: none;
+}
+
+.circleSmall{
+    height: 20vh;
+    width: 20vh;
+    border-radius: 50%;
+    background-color: #fff28f;
+    transition: 0.2s;
+    opacity: 0;
+    animation: fadeIn 0.2s linear;
+    position: absolute;
+}
+
+@keyframes fadeIn {
+    from{opacity: 0;}
+    to{opacity: 1;}
 }
