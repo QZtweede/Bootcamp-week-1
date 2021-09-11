@@ -1,4 +1,5 @@
 let startCircle = document.getElementById("mainPageCircle")
+let link = document.getElementById("link")
 startCircle.addEventListener("click", startIntro)
 
 var s1
@@ -8,9 +9,10 @@ var val = 0
 var countS2 = 1
    
 async function startIntro(){
-    startCircle.style.transition = 1 + "s"
     startCircle.style.opacity = 0
     startCircle.style.pointerEvents = "none"
+    link.style.opacity = 0
+    link.style.pointerEvents = "none"
     await sleep(1500)
     section1()
     section2()

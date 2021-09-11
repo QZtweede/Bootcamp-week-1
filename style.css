@@ -26,6 +26,7 @@ body{
     flex-direction: column;
     cursor: pointer;
     position: absolute;
+    transition: 1s
 }
 
 #mainPageCircle h1{
@@ -38,6 +39,29 @@ body{
     font-family: 'Nova Square', cursive;
     font-size: 3vh;
     pointer-events: none;
+}
+
+#link{
+    height: 5vw;
+    width: 15vw;
+    border-width:  0px 5px 5px 0px ;
+    border-color:  white;
+    border-style: solid;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: 1s;
+}
+
+
+#link h1{
+    color: white;
+    font-family: 'Nova Square', cursive;  
+    font-size: 30px;
 }
 
 .circleSmall{
