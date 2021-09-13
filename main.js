@@ -6,6 +6,7 @@ var s1
 var speed = 40
 var array = []
 var val = 0
+var val2 = 0
 var countS2 = 1
    
 async function startIntro(){
@@ -26,9 +27,8 @@ async function startIntro(){
     section2()
     await sleep(150)
     section2()
-    await sleep(1000)
-    destroy()
-    countS2 = 1
+    await sleep(400)
+    section3()
 }
 
 async function section1(){
@@ -130,6 +130,22 @@ async function section2(){
     }
 }
 
+async function section3(){
+    createCircles2()
+    s2.style.marginBottom = 45 + "vw"
+    await sleep(100)
+    createCircles2()  
+    await sleep(100)
+    createCircles2()
+    s2.style.marginTop = 45 + "vw"
+    await sleep(100)
+    document.getElementById("cM0").style.backgroundColor = "white"
+    await sleep(100)
+    document.getElementById("cM1").style.backgroundColor = "white"
+    await sleep(100)
+    document.getElementById("cM2").style.backgroundColor = "white"
+}
+
 function createCircles(){
     s1 = document.createElement("div")
     s1.setAttribute("class", "circleSmall")
@@ -139,6 +155,17 @@ function createCircles(){
     array.push(s1)
     val++
     s1.style.transform = "scale(" + countS2 + ")"
+}
+
+function createCircles2(){
+    s2 = document.createElement("div")
+    s2.setAttribute("class", "circleMid")
+    s2.setAttribute("id", "cM" + val2)
+    document.body.appendChild(s2)
+    s2.style.opacity = 1   
+    array.push(s1)
+    val2++
+    s2.style.transform = "scale(" + countS2 + ")"
 }
 
 function destroy(){

@@ -75,6 +75,17 @@ body{
     position: absolute;
 }
 
+.circleMid{
+    height: 28vh;
+    width: 28vh;
+    border-radius: 50%;
+    background-color: #f74d40;
+    transition: 0.2s;
+    opacity: 0;
+    animation: fadeIn 0.2s linear;
+    position: absolute;
+}
+
 @keyframes fadeIn {
     from{opacity: 0;}
     to{opacity: 1;}
