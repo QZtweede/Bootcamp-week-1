@@ -13,6 +13,7 @@ body{
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    flex-direction: column;
 }
 
 #mainPageCircle{
@@ -147,4 +148,60 @@ h2{
     bottom: 0;
     color: white;
     transition: 1s;
+}
+
+#episodeName{
+    font-size: 20vh;
+    color: white;
+    font-family: 'Lalezar', cursive;
+    text-shadow: 5px 5px 0px #000000;
+    animation: fadeIn 1s;
+}
+
+#header{
+    font-size: 8vh;
+    color: white;
+    font-family: 'Lalezar', cursive;
+    text-shadow: 3px 3px 0px #000000;
+    animation: fadeIn 1s;
+}
+
+#copyright{
+    font-size: 4vh;
+    color: white;
+    font-family: 'Lalezar', cursive;
+    margin-top: 20vh;
+    text-align: center;
+    text-shadow: 2px 2px 0px #000000;
+    animation: fadeIn 1s;
+}
+
+#enterEpisodeNameContainer{
+    height: 30vh;
+    width: 50vh;
+    position: absolute;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 1s;
+}
+
+#enterEpisodeNameContainer h1{
+    font-size: 5vh;
+    color: white;
+    font-family: 'Nova Square', cursive;
+}
+
+#enterEpisodeName{
+    margin-top: 2vh;
+    height: 5vh;
+    width: 30vh;
+    font-family: 'Nova Square', cursive;
+}
+
+@keyframes fadeIn {
+    from{opacity: 0;}
+    to{opacity: 1;}
 }

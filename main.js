@@ -1,8 +1,10 @@
 let startCircle = document.getElementById("mainPageCircle")
 let link = document.getElementById("link")
 let h2 = document.getElementById("h2")
+let episodeNameContainer = document.getElementById("enterEpisodeNameContainer")
 startCircle.addEventListener("click", startIntro)
 var audio = new Audio('Cannon TV Intro.mp3');
+var episodeNameInsert 
 
 var s1
 var array = []
@@ -12,11 +14,13 @@ var val3 = 0
 var countS2 = 1
    
 async function startIntro(){    //tijdlijn
+    episodeNameInsert = document.getElementsByName("enterEpisodeName")[0].value
     startCircle.style.opacity = 0
     startCircle.style.pointerEvents = "none"
     link.style.opacity = 0
     link.style.pointerEvents = "none"
     h2.style.opacity = 0
+    episodeNameContainer.style.opacity = 0
     await sleep(1200)   //functie voor pauzes
     audio.play();   //start audio
     await sleep(300)  
@@ -474,7 +478,7 @@ async function section11(){
     var subTitle = document.createElement("p")      //subtitel in de website zetten
     subTitle.setAttribute("id", "subTitle")     
     document.body.appendChild(subTitle)
-    document.getElementById("subTitle").innerHTML = "A QUINN MARTIN PRODUCTION";
+    document.getElementById("subTitle").innerHTML = "a QUINN MARTIN PRODUCTION";
     await sleep(1000)
     document.getElementById("subTitle").style.opacity = 0
     document.getElementById("title").style.opacity = 0
@@ -496,7 +500,7 @@ async function section11(){
     for(i = 1; i < 7; i++){     //6x de foto in de middelste cirkel veranderen en ook de kleuren van alle cirkels
         
         document.getElementById("c163").style.backgroundColor = "#fff28f"
-        document.getElementById("c159").style.backgroundImage = "url(img/face" + i + ".jpg)"
+        document.getElementById("c159").style.backgroundImage = "url(img/face" + i + ".png)"
         document.getElementById("c159").style.backgroundSize = "cover"
         document.getElementById("c159").style.backgroundPosition = "center"
         await sleep(2500)
@@ -519,7 +523,31 @@ async function section11(){
     document.getElementById("c159").style.opacity = 0
     document.getElementById("c162").style.opacity = 0
     document.getElementById("c163").style.opacity = 0
-    await sleep(8000)
+    section12()
+}
+
+async function section12(){
+    await sleep(2000)
+    document.body.style.transition = 1 + "s"
+    document.body.style.backgroundColor = "#385dcf"
+    document.body.style.backgroundImage = "url(img/dots.png)"
+    document.body.style.backgroundRepeat = "no-repeat"
+    var header = document.createElement("h1")      //header aflevering in de website zetten
+    header.setAttribute("id", "header")     
+    document.body.appendChild(header)
+    document.getElementById("header").innerHTML = "tonight's episode";
+    var episodeName = document.createElement("h1")      //aflevering naam in de website zetten
+    episodeName.setAttribute("id", "episodeName")     
+    document.body.appendChild(episodeName)
+    document.getElementById("episodeName").innerHTML = episodeNameInsert
+    if(episodeNameInsert == ""){
+        document.getElementById("episodeName").innerHTML = "TO RIDE A TIGER"
+    }
+    var copyright = document.createElement("h1")      //copyright in de website zetten
+    copyright.setAttribute("id", "copyright")     
+    document.body.appendChild(copyright)
+    document.getElementById("copyright").innerHTML = "© copyright mcmlxxiii QM productions <br> all rights reserved";
+    await sleep(10000)
     location.reload()   //pagina refreshen
 }
 
